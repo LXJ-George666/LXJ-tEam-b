@@ -1,14 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
+<html lang="en"><head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Clean Blog - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <title>⭐工具导航</title>
+    <link rel="icon" type="image/x-icon" id="favicon" href="assets/ico/愤怒.svg" />
+    <script>
+        // 随机选择一个图标
+        function getRandomIcon() {
+            var icons = [
+                "闭嘴.svg",
+                "不开心.svg",
+                "大牙.svg",
+                "发火.svg",
+                "愤怒.svg",
+                "尴尬.svg",
+                "鬼脸.svg",
+                "好吧.svg",
+                "惊喜.svg",
+                "糗大了.svg",
+                "无语.svg",
+                "高兴.svg",
+                "色.svg",
+                "耍帅.svg"
+            ];
+
+            var randomIndex = Math.floor(Math.random() * icons.length);
+            return icons[randomIndex];
+        }
+
+        // 设置随机图标为favicon
+        function setRandomFavicon() {
+            var favicon = document.getElementById('favicon');
+            var randomIcon = getRandomIcon();
+            favicon.href = "assets/ico/" + randomIcon;
+        }
+
+        // 在页面加载时设置随机图标
+        window.addEventListener('load', setRandomFavicon);
+    </script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
@@ -39,12 +70,12 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
-                            <h1>阳光洒在宇宙的, 蓝天飘荡与心灵共舞。 &nbsp; &nbsp;&nbsp;</h1>
+                            <h1>阳光洒在宇宙,蓝天与心灵共舞。 &nbsp; &nbsp;&nbsp;</h1>
                             <h2 class="subheading">Soulful Dance～&nbsp;</h2>
                             <span class="meta">
                             Posted by LaoGou on May 24, 2023.
                         </span>
-                        </div>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -77,11 +108,27 @@
     </style>
 </head>
 <body>
-    <h1><strong>潘多拉/Pandora</strong></h1>
+    
+    <h1><strong>👊230527-部署个人AI网站</strong></h1>
+	<p>
+    免费容器：
+		<br><br>
+<a href="https://vercel.com" target="_blank" class="button">vercel</a>
+<a href="https://dashboard.render.com" target="_blank" class="button">render</a>
+<a href="https://railway.app" target="_blank" class="button">railway</a>
+<a href="https://dash.zeabur.com" target="_blank" class="button">zeabur</a>
+    <p> <strong>点击体验👉</strong><a href="https://bing.laogou717.com" target="_blank">
+  <img src="assets/img/bingchat.jpg" alt="bing" style="max-width: 100px; max-height: 200px;">
+</a>
+</p>	
+    <p><strong>潘多拉/Pandora</strong></p>
     <p>
         作者：<a href="https://github.com/pengzhile/pandora" target="_blank">pengzhile</a><br>
         优势亮点：无需魔法 国内🉑️用<br>
-        免费在线使用：<a href="https://chat-shared1.zhile.io" target="_blank">点击跳转</a><br>
+		获取access token路径:：<a href="https://chat.openai.com/api/auth/session" target="_blank">点击跳转</a><br>
+        免费ChatGPT地址：<a href="https://chat-shared2.zhile.io" target="_blank">点击跳转</a><br>
+		如果失效可前往最新地址：<a href="https://github.com/pengzhile/pandora/issues/584" target="_blank">点击跳转</a><br>
+		
         部署本地文本教程：<a href="https://github.com/pengzhile/pandora/blob/master/doc/wiki.md" target="_blank">点击跳转</a><br>
         部署本地视频教程：<a href="https://www.bilibili.com/video/BV1PP41197jk" target="_blank">点击跳转</a><br>
         老狗的一键部署文件：<a href="https://pan.baidu.com/s/1SJ1xoXMV9-zsJlQLEEo83g?pwd=6666#list/path=%2F" target="_blank">点击跳转</a>
@@ -109,8 +156,8 @@
         Leonardo AI：<a href="https://leonardo.ai" target="_blank">leonardo.ai</a><br>
         BlueWillow：<a href="https://bluewillow.ai" target="_blank">bluewillow.ai</a>
     </p>
-    
     <h1><strong>三个提升工作效率的AI工具</strong></h1>
+    <h1>&nbsp;</h1>
     <p>
         周报通：<a href="https://zhoubaotong.com" target="_blank">zhoubaotong.com</a><br>
         文档聊天：<a href="https://chatdoc.com" target="_blank">chatdoc.com</a><br>
