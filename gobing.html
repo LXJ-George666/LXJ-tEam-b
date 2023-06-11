@@ -23,11 +23,30 @@
     <style>
 		
         body {
+			 text-align: center;
             font-family: Arial, sans-serif;
             color: #333;
             background-color: #f7f7f7;
         }
+.iframe-container {
+    display: inline-block;
+    border: 5px solid #3182ef;
+    border-radius: 10px;
+    overflow: hidden; /* This is to apply the border radius to the iframe */
+    margin-top: 30px;
+}
 
+iframe {
+    width: 720px;
+    height: 405px;
+}
+
+@media only screen and (max-width: 720px) {
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+}
         .container-main {
             text-align: center;
             max-width: 800px;
@@ -137,7 +156,10 @@
     </nav>
 
     <div class="container-main">
-        <h1>人人都可用的Newbing部署项目</h1>
+        <h1>人人都可用的Newbing部署项目
+		<div class="iframe-container">
+    <iframe src="https://player.bilibili.com/player.html?aid=827221009&bvid=BV1Mu4y1o7i9&cid=1159709209&page=1" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+</div></h1>
         <p>Github项目地址: <a href="https://github.com/adams549659584/go-proxy-bingai">点击这里</a></p>
         <p>部署容器:</p>
 		<a href="https://vercel.com/new/clone?repository-url=https://github.com/adams549659584/go-proxy-bingai&amp;project-name=go-proxy-bingai&amp;repository-name=go-proxy-bingai-vercel" rel="nofollow"><img src="https://camo.githubusercontent.com/5e471e99e8e022cf454693e38ec843036ec6301e27ee1e1fa10325b1cb720584/68747470733a2f2f76657263656c2e636f6d2f627574746f6e" alt="Deploy with Vercel" data-canonical-src="https://vercel.com/button" style="max-width: 150%;"></a>
@@ -393,6 +415,7 @@ export default {
         });
     });
 </script>
+	
 
 </body>
 
