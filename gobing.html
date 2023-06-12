@@ -26,8 +26,35 @@
 			 text-align: center;
             font-family: Arial, sans-serif;
             color: #333;
+			margin: 0;
+    padding: 0;
+    box-sizing: border-box;
             background-color: #f7f7f7;
         }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 适用于较小屏幕 */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+    /* 在这里添加适用于小屏幕的样式 */
+}
+
+/* 适用于中等屏幕 */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* 在这里添加适用于中等屏幕的样式 */
+}
+
+/* 适用于较大屏幕 */
+@media (min-width: 1025px) {
+    /* 在这里添加适用于大屏幕的样式 */
+}
 .iframe-container {
     display: inline-block;
     border: 5px solid #3182ef;
