@@ -1,7 +1,8 @@
 function openDialog(event) {
     event.preventDefault();
-    alert("由于一些不可抗力因素?,你可能打不开Github或者Discord,那么这时候你可以使用一个老牌开源项目Steam++ 也叫 Watt Toolkit,如果不懂的话可以在B站或百度搜索Steam++这是官网地址:https://steampp.net/");
+    alert("\u7531\u4E8E\u4E00\u4E9B\u4E0D\u53EF\u6297\u529B\u56E0\u7D20\uD83D\uDE45,\u4F60\u53EF\u80FD\u6253\u4E0D\u5F00Github\u6216\u8005Discord,\u90A3\u4E48\u8FD9\u65F6\u5019\u4F60\u53EF\u4EE5\u4F7F\u7528\u4E00\u4E2A\u8001\u724C\u5F00\u6E90\u9879\u76EESteam++ \u4E5F\u53EB Watt Toolkit,\u5982\u679C\u4E0D\u61C2\u7684\u8BDD\u53EF\u4EE5\u5728B\u7AD9\u6216\u767E\u5EA6\u641C\u7D22Steam++\u8FD9\u662F\u5B98\u7F51\u5730\u5740:https://steampp.net/");
 }
+
 
 // JavaScript Document
 // Get the modal
