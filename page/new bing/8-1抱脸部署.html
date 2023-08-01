@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newbing又来了</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            width: 100%;
+            background-color: #4CAF50;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        nav span {
+            cursor: pointer;
+            transition: background-color 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 0 10px;  /* 添加左右间距 */
+        }
+
+        nav span:hover {
+            background-color: #45a049;
+        }
+
+        .code-container {
+            background-color: #282c36;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 90%;
+            margin: 20px 0;
+            padding: 20px;
+            position: relative;
+        }
+
+        .code-title {
+            font-size: 24px;
+            color: #a9b7c6;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            color: #a9b7c6;
+            margin: 0;
+            overflow-x: auto;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        button.copy-btn, button.action-btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            outline: none;
+            transition: background-color 0.3s;
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        button.copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        button.copy-btn:hover, button.action-btn:hover {
+            background-color: #45a049;
+        }
+
+        .emoji-footer {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <span onclick="window.location.href='../../index.htm'">🏠回到主页</span>
+        <span onclick="window.location.href='https://space.bilibili.com/46377861/channel/collectiondetail?sid=1387824'">📖B站合集</span>
+    </nav>
+
+    <div class="code-container">
+        <div class="code-title">Newbing</div>
+        <button class="copy-btn" onclick="copyCode()">复制</button>
+        <pre>
+# Build Stage
+# 使用 golang:alpine 作为构建阶段的基础镜像
+FROM golang:alpine AS builder
+
+# 添加 git，以便之后能从GitHub克隆项目
+RUN apk --no-cache add git
+
+# 从 GitHub 克隆 go-proxy-bingai 项目到 /workspace/app 目录下
+RUN git clone https://github.com/Harry-zklcdc/go-proxy-bingai.git /workspace/app
+
+# 设置工作目录为之前克隆的项目目录
+WORKDIR /workspace/app
+
+# 编译 go 项目。-ldflags="-s -w" 是为了减少编译后的二进制大小
+RUN go build -ldflags="-s -w" -tags netgo -trimpath -o go-proxy-bingai main.go
+
+# Runtime Stage
+# 使用轻量级的 alpine 镜像作为运行时的基础镜像
+FROM alpine
+
+# 设置工作目录
+WORKDIR /workspace/app
+
+# 从构建阶段复制编译后的二进制文件到运行时镜像中
+COPY --from=builder /workspace/app/go-proxy-bingai .
+
+# 设置环境变量，此处为随机字符
+ENV Go_Proxy_BingAI_USER_TOKEN_1="kJs8hD92ncMzLaoQWYtX5rG6bE3fZ4iO"
+
+# 暴露8080端口
+EXPOSE 8080
+
+# 容器启动时运行的命令
+CMD ["/workspace/app/go-proxy-bingai"]
+
+        </pre>
+      <a href="https://huggingface.co/" class="action-link">
+    <button class="action-btn">抱脸🧐</button>
+</a>
+
+    </div>
+
+    <div class="emoji-footer">🥹</div>
+	感谢群友分享思路
+
+    <script>
+        function copyCode() {
+            let code = document.querySelector('pre').textContent.trim();
+            let textarea = document.createElement('textarea');
+            textarea.value = code;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('代码已复制!');
+        }
+    </script>
+
+</body>
+
+</html>
