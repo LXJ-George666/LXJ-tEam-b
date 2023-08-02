@@ -156,12 +156,23 @@ CMD ["/workspace/app/go-proxy-bingai"]
 
     </div>
 
-    <div class="emoji-footer">🥹</div>
-	感谢群友分享思路
+  <div class="emoji-footer" onclick="copyEmojiCode()">🥹</div>
+    感谢群友分享思路
 
     <script>
         function copyCode() {
             let code = document.querySelector('pre').textContent.trim();
+            let textarea = document.createElement('textarea');
+            textarea.value = code;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('代码已复制!');
+        }
+
+        function copyEmojiCode() {
+            let code = 'app_port: 8080';
             let textarea = document.createElement('textarea');
             textarea.value = code;
             document.body.appendChild(textarea);
