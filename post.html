@@ -88,6 +88,8 @@
                        <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <meta charset="UTF-8">
     <title>合集</title>
     <style>
@@ -105,9 +107,139 @@
             color: #337ab7;
             text-decoration: none;
         }
+	 .code-container {
+            border: 2px solid #007bff;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 10px;
+            overflow-y: scroll; /* 允许竖直滚动 */
+            height: 300px; /* 设置高度，控制显示三四行 */
+            font-family: 'Courier New', monospace;
+            line-height: 1.5;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .code-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .copy-button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
+	  <h1><strong>WebStackPage</strong></h1>
+	
+    <p>
+     <div style="text-align: center; display: inline-block; max-width: 400px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s;">
+  <img src="https://camo.githubusercontent.com/cd5db39ba59752822b7770d5074571fc4db1660af9066dfdb9953ff53ed7195e/687474703a2f2f7777772e776562737461636b2e63632f6173736574732f696d616765732f707265766965772e676966" alt="" style="max-width: 100%; display: block; transition: all 0.3s;" data-target="animated-image.originalImage">
+  <p style="color: #888; font-size: 14px; margin-top: 5px; margin-bottom: 15px;">项目效果展示(来自开源项目)</p>
+</div><br><br>
+
+       <a href="https://github.com/WebStackPage/WebStackPage.github.io" class="button" style="你的内联样式" id="LGWEBGithub">
+  <i class="fab fa-github"></i> Github项目
+</a><br><br>
+	
+    一键部署<br><br>
+	<a href="https://vercel.com/new/clone?repository-url=https://github.com/laogou717/WebStackPage.github.io"><img src="https://vercel.com/button" alt="Deploy on Vercel"/></a>
+<a href="https://zeabur.com/templates/GLDT1S"><img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur"/></a><br><br><br>
+	
+	<div class="code-container">
+        <div class="code-title">老狗乱写的Prompt</div>
+        <pre id="code">
+        <!-- 这里插入代码内容 -->
+Fixed Format Rules:
+Level One Title (A): Format as &quot;A:Title Name [Random Vector Image or Emoji]&quot;
+Level Two Title (a): Format as &quot;a:Title Name [Image Path]&quot;
+Level Three Title (b): Format as &quot;b:Title Name&quot;
+Level Two Title with Specific URL (c): Format as &quot;c:URL&quot;
+Structure:
+A includes a, b, c
+a includes b, c
+An A can include multiple a, b, c
+An a only includes one b, c
+If there are multiple second and third-level titles under A:
+A:Level One Title
+a:web1/web2/web3...
+b:An Example Website1/An Example Website2/An Example Website3...
+c:https:web1.com/https:web2.com/https:web2.com...
+Note: Separate each element with &quot;/&quot;, and do not split if &quot;//&quot; appears together
+Follow the fixed format to call linecons icons for subsequent coding
+Example:
+A=常用推荐
+a=Dribbble[./assets/images/logos/dribbble.png]
+b=全球UI设计师作品分享平台。
+c=https://dribbble.com/
+reply:
+Level One Title:
+                    &lt;li&gt;
+                        &lt;a href=&quot;#常用推荐&quot; class=&quot;smooth&quot;&gt;
+                            &lt;i class=&quot;linecons-star&quot;&gt;&lt;/i&gt;
+                            &lt;span class=&quot;title&quot;&gt;常用推荐&lt;/span&gt;
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+follow-up:
+ <!-- 常用推荐 -->
+            &lt;h4 class=&quot;text-gray&quot;&gt;&lt;i class=&quot;linecons-tag&quot; style=&quot;margin-right: 7px;&quot; id=&quot;常用推荐&quot;&gt;&lt;/i&gt;常用推荐&lt;/h4&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col-sm-3&quot;&gt;
+                    &lt;div class=&quot;xe-widget xe-conversations box2 label-info&quot; onclick=&quot;window.open('https://dribbble.com/', '_blank')&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;bottom&quot; title=&quot;&quot; data-original-title=&quot;https://dribbble.com/&quot;&gt;
+                        &lt;div class=&quot;xe-comment-entry&quot;&gt;
+                            &lt;a class=&quot;xe-user-img&quot;&gt;
+                                &lt;img data-src=&quot;../assets/images/logos/dribbble.png&quot; class=&quot;lozad img-circle&quot; width=&quot;40&quot;&gt;
+                            &lt;/a&gt;
+                            &lt;div class=&quot;xe-comment&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;xe-user-name overflowClip_1&quot;&gt;
+                                    &lt;strong&gt;Dribbble&lt;/strong&gt;
+                                &lt;/a&gt;
+                                &lt;p class=&quot;overflowClip_2&quot;&gt;全球UI设计师作品分享平台。&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+Question:
+A=
+a=[图片链接]
+b=
+c=
+		
+        </pre>
+        <button class="copy-button" onclick="copyCode()">复制代码</button>
+    </div>
+
+    <script>
+        function copyCode() {
+            var code = document.getElementById("code").innerText;
+            var textarea = document.createElement("textarea");
+            textarea.value = code;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            alert("代码已复制到剪贴板!");
+        }
+    </script>
+
+    </p>
+	
 	<p><strong>潘多拉/Pandora </strong></p>
     <p>
         作者：<a href="https://github.com/pengzhile/pandora-cloud-serverless" target="_blank">pengzhile</a><br>
