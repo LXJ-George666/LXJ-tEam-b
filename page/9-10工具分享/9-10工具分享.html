@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #f0f0f0;
+        padding: 20px;
+        font-family: 'Arial, sans-serif';
+        margin: 0;
+        min-height: 100vh;
+    }
+    .navbar {
+        position: relative;
+        width: 100%;
+        background-color: #343a40;
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+        color: #f8f9fa;
+    }
+    .navbar a {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        color: #f8f9fa;
+        text-decoration: none;
+        font-size: 18px;
+    }
+    .navbar a:hover {
+        text-decoration: underline;
+    }
+    .icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .icon {
+        margin: 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .icon p {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #333;
+    }
+    .footer {
+        position: relative;
+        width: 100%;
+        background-color: #343a40;
+        padding: 20px;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        font-size: 16px;
+        color: #f8f9fa;
+    }
+    .footer a {
+        color: #f8cda9;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+</style>
+<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+</head>
+<body>
+
+<div class="navbar">
+<a href="../../index.html">回到首页</a>😄分享四个实用AI工具 </div>
+
+<div class="icons">
+    <div class="icon" onclick="openModal()">
+		<a href="https://promptfolder.com/midjourney-prompt-helper/">
+        <lord-icon
+            src="https://cdn.lordicon.com/kfutqnjo.json"
+            trigger="hover"
+            colors="primary:#f9c9c0,secondary:#121331"
+            style="width:250px;height:250px">
+        </lord-icon>
+		</a>
+        <p>AI绘图</p>
+    </div>
+      <div class="icon">
+		  <a href="https://ai.invideo.io/">
+        <lord-icon
+            src="https://cdn.lordicon.com/riuofmyu.json"
+            trigger="hover"
+            colors="outline:#121331,primary:#3a3347,secondary:#ebe6ef"
+            style="width:250px;height:250px">
+        </lord-icon>
+		  </a>
+        <p>AI生成视频</p>
+    </div>
+    <div class="icon">
+		<a href="https://facebook-musicgen--mhr89.hf.space/">
+        <lord-icon
+            src="https://cdn.lordicon.com/ryodbtwr.json"
+            trigger="hover"
+            colors="primary:#646e78,secondary:#2ca58d,tertiary:#ffc738,quaternary:#ebe6ef"
+            style="width:250px;height:250px">
+        </lord-icon>
+		</a>
+        <p>AI生成音乐</p>
+    </div>
+    <div class="icon" >
+		<a href="https://snackprompt.com/">
+        <lord-icon
+            src="https://cdn.lordicon.com/ttioogfl.json"
+            trigger="morph"
+            colors="primary:#121331,secondary:#ebe6ef,tertiary:#e83a30,quaternary:#92140c,quinary:#f9c9c0"
+            style="width:250px;height:250px">
+        </lord-icon>
+			</a>
+        <p>ChatGPT提示词</p>
+    </div>
+
+  <div class="icon" onclick="openModal()">
+    <a href="../../post.html">
+	  <lord-icon
+            src="https://cdn.lordicon.com/gzmgulpl.json"
+            trigger="hover"
+            colors="outline:#121331,primary:#4bb3fd,secondary:#ebe6ef"
+            style="width:250px;height:250px">
+        </lord-icon>
+	  </a>
+        <p>其他</p>
+    </div>
+</div>
+
+<div class="footer">
+    © 2023 AI工具集合 | <a href="URL1">联系我们</a> | <a href="URL2">隐私政策</a>
+</div>
+
+<div id="myModal" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4); padding-top: 60px;">
+    <div class="modal-content" style="background-color: #fefefe; margin: 5% auto; padding: 20px; border: 1px solid #888; width: 80%;">
+        <span class="close" style="color: #aaa; float: right; font-size: 28px; font-weight: bold;">&times;</span>
+        <p>在这里添加你想要展示的内容。</p>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById("myModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    function openModal() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
