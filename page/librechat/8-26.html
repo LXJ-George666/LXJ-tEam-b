@@ -1,7 +1,7 @@
 <html>
 <head>
-<meta charset="UTF-8">
-    <style>
+<meta charset="utf-8"/>
+<style>
         * {
             box-sizing: border-box;
             margin: 3;
@@ -118,205 +118,180 @@
     </style>
 </head>
 <body>
-	<nav>
-        <a href="../../index.html">首页</a>
-        <a style="color: crimson" href="https://libre.laogou717.com/">👋不想部署,直接体验</a>
-        <a href="https://github.com/danny-avila/LibreChat">项目开源地址</a>
-    </nav>
-    <div class="container">
-        <h1>交互式设计</h1>
-        <p>这是一个让你快速填写变量的工具。你只需要按照提示输入变量，值自设置为user_provided[这意味这你可以部署完毕后再去设置]。每次填写完一个变量，就会跳转到下一个问题，直到回答完所有问题，出现一个下载按钮和复制按钮。你可以点击这些按钮来下载或复制之前的变量来一键部署</p>
-        
-        <div class="question" id="q1">
-          <h2>[HOST]</h2>
-            <p>✅允许访问的IP地址<br/><code>0.0.0.0</code>为所有地址</p>
-            <input type="text" id="host" value="0.0.0.0">
-            <button onclick="nextQuestion(1)">下一步</button>
-        </div>
-<a href="https://zeabur.com/templates/JB402Y?referralCode=laogou717"><img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur"/></a>
-		
-	
-			  
-			  
-        <div class="question" id="q2" style="display:none;">
-            <h2>[PORT]</h2>
-            <p>网站的端口号,理论上可以自定义<br/>但是可能会出现冲突,因此推荐<code>7860</code></p>
-            <input type="number" id="port" value="7860">
-            <button onclick="nextQuestion(2)">下一步</button>
-        </div>
-
-        <div class="question" id="q3" style="display:none;">
-            <h2>[ANTHROPIC_MODELS]</h2>
-            <p>克劳德模型如果想使用克劳德<br/>这个是必须的</p>
-            <input type="text" id="anthropic_models" value="claude-1,claude-instant-1,claude-2">
-            <button onclick="nextQuestion(3)">下一步</button>
-        </div>
-
-        <div class="question" id="q4" style="display:none;">
-            <h2>[ANTHROPIC_API_KEY]</h2>
-            <p>克劳德API,可以在任何<br/>需要API的地方填入<code>user_provided</code><br/>这样我们就可以在网站内填写API</p>
-            <input type="text" id="anthropic_api_key" value="user_provided">
-            <button onclick="nextQuestion(4)">下一步</button>
-        </div>
-
-        <div class="question" id="q5" style="display:none;">
-            <h2>[OPENAI_MODELS]</h2>
-            <p>Chatgpt模型</p>
-            <input type="text" id="openai_models" value="gpt-3.5-turbo,gpt-3.5-turbo-16k,gpt-3.5-turbo-0301,llama-2-70b-chat">
-            <button onclick="nextQuestion(5)">下一步</button>
-        </div>
-
-        <div class="question" id="q6" style="display:none;">
-            <h2>[CHATGPT_TOKEN]</h2>
-            <p>ChatGPT的登陆token<code>accesstoken</code><br/>或者使用<code>免费共享Token</code></p>
-            <input type="text" id="chatgpt_token" value="user_provided">
-            <button onclick="nextQuestion(6)">下一步</button>
-        </div>
-
-        <div class="question" id="q7" style="display:none;">
-            <h2>[OPENAI_API_KEY]</h2>
-            <p>ChatGPT付费API或者第三方的转发API<br/>但需要设置对应端点 ⬇️</p>
-            <input type="text" id="openai_api_key" value="user_provided">
-            <button onclick="nextQuestion(7)">下一步</button>
-        </div>
-
-        <div class="question" id="q8" style="display:none;">
-            <h2>[OPENAI_REVERSE_PROXY]</h2>
-            <p>API端点第一个是pandora项目的端点;<br/>第二个是奇美拉项目的端点;<br/>其他的自行填写</p>
-            <label><input type="radio" name="openai_reverse_proxy" value="https://ai.fakeopen.com/v1/chat/completions">https://ai.fakeopen.com/v1/chat/completions</label><br/>
-            <label><input type="radio" name="openai_reverse_proxy" value="https://chimeragpt.adventblocks.cc/api">https://chimeragpt.adventblocks.cc/api</label><br/>
-			   <label><input type="radio" name="openai_reverse_proxy" value="https://chimeragpt.adventblocks.cc/api">https://api.openai.com/v1/chat/completions</label><br/>
-            <label><input type="radio" name="openai_reverse_proxy" value="">其他:</label><input type="text" id="openai_reverse_proxy_custom">
-            <button onclick="nextQuestion(8)" class="disabled">下一步</button>
-        </div>
-
-        <div class="question" id="q9" style="display:none;">
-            <h2>[BINGAI_TOKEN]</h2>
-            <p>必应的登陆cookie,_U数据</p>
-            <input type="text" id="bingai_token" value="user_provided">
-            <button onclick="nextQuestion(9)">下一步</button>
-        </div>
-
-        <div class="question" id="q10" style="display:none;">
-            <h2>[PALM_KEY]</h2>
-            <p>谷歌大语言模型的API</p>
-            <input type="text" id="palm_key" value="user_provided">
-            <button onclick="nextQuestion(10)">下一步</button>
-        </div>
-
-        <div class="question" id="q11" style="display:none;">
-            <h2>[ALLOW_REGISTRATION]</h2>
-            <p>是否允许注册✅</p>
-            <label><input type="radio" name="allow_registration" value=true>是</label><br/>
-            <label><input type="radio" name="allow_registration" value=false>否</label><br/>
-            
-            <button onclick="nextQuestion(11)" class="disabled">下一步</button>
-        </div>
-
-        <div class="question" id="q12" style="display:none;">
-            <h2>[ALLOW_SOCIAL_LOGIN]</h2>
-            <p>是否允许社交媒体登陆✅</p>
-            <label><input type="radio" name="allow_social_login" value=true>是</label><br/>
-            <label><input type=radio name=allow_social_login value=false>否</label><br/>
-        <button onclick="nextQuestion(12)" class="disabled">下一步</button>
-    </div>
-
-    <div class="question" id="q13" style="display:none;">
-        <h2>[ALLOW_SOCIAL_REGISTRATION]</h2>
-        <p>是否允许社交媒体注册✅</p>
-        <label><input type="radio" name="allow_social_registration" value=true>是</label><br/>
-        <label><input type=radio name=allow_social_registration value=false>否</label><br/>
-        
-        <button onclick="nextQuestion(13)" class="disabled">下一步</button>
-    </div>
-
-    <div class="question" id="q14" style="display:none;">
-        <h2>[MONGO_URI]</h2>
-        <p>数据库,用来存放用户注册、登陆等信息</p>
-        <input type="text" id="mongo_uri" value="user_provided">
-        <button onclick="nextQuestion(14)">下一步</button>
-    </div>
-
-    <div class="question" id="q15" style="display:none;">
-        <h2>[CREDS_KEY], [CREDS_IV], [JWT_SECRET]</h2>
-        <p>🔐加密数值</p>
-        <input type="text" id="creds_key" placeholder="CREDS_KEY">
-        <input type="text" id="creds_iv" placeholder="CREDS_IV">
-        <input type="text" id="jwt_secret" placeholder="JWT_SECRET">
-        <button onclick="generateKeys()">一键填入</button>
-        <button onclick="nextQuestion(15)">下一步</button>
-    </div>
-
-    <div class="question" id="q16" style="display:none;">
-        <h2>[SESSION_EXPIRY]</h2>
-        <p>登陆过期时间</p>
-        <input type="range" id="session_expiry" min=1 max=30 value=7>
-        <input type="number" id="session_expiry_number" value=7 onchange="updateRange()">
-        天
-        <button onclick="nextQuestion(16)">下一步</button>
-    </div>
-
-    <div class="question" id="q17" style="display:none;">
-        <h2>[DOMAIN_CLIENT]</h2>
-        <p>公共域名[填入部署的项目地址]</p>
-        <input type=text id=domain_client value=https://huggingface.co/spaces/laogou717/laogouchat>
-        <button onclick=nextQuestion(17)>下一步</button>
-    </div>
-
-    <div class=question id=q18 style=display:none;>
-        <h2>[DOMAIN_SERVER]</h2>
-        <p>数据库域名[填入部署的项目地址]</p>
-        <input type=text id=domain_server value=https://huggingface.co/spaces/laogou717/laogouchat>
-        <button onclick=nextQuestion(18)>下一步</button>
-    </div>
-
-    <div class=question id=q19 style=display:none;>
-        <h2>[APP_TITLE]</h2>
-        <p>网站聊天时的名字可以填入任意内容</p>
-        <input type=text id=app_title value=LAOGOU717>
-        <button onclick=nextQuestion(19)>完成</button>
-    </div>
-
-    <div class=result id=result style=display:none;>
-        <h2>结果</h2>
-        <p>恭喜你，你已经完成了所有的问题，这是你的问题和答案：</p>
-<pre id=output></pre>
-<button onclick=download()>下载</button>
-<button onclick=copy()>复制</button>
-    </div>
-
-	  <div class="content">
-<p>获取变量值</p>
-<table>
-    <tr>
-        <th>获取地址</th>
-        <th>备注</th>
-    </tr>
-    <tr>
-        <td>https://chat.openai.com/api/auth/session</td>
-        <td>Openai登陆token</td>
-    </tr>
-<tr>
-        <td><p>&nbsp;pk-this-is-a-real-free-pool-token-for-everyone</p>
-        <p>&nbsp;pk-this-is-a-real-free-api-key-pk-for-everyone</p></td>
-        <td>共享accesstoken</td>
-</tr>
-<tr>
-    <td>https://console.anthropic.com</td>
-    <td>克劳德API</td>
-</tr>
-	<tr>
-        <td>https://learn.microsoft.com/zh-cn/training/modules/implement-common-integration-features-finance-ops/10-exercise-1</td>
-        <td>虚拟机验证</td>
-    </tr>
-	
-	<tr>
-        <td>https://account.mongodb.com/account/login</td>
-        <td>mongodb数据库</td>
-    </tr>
-	
+<nav>
+<a href="../../index.html">首页</a>
+<a href="https://libre.laogou717.com/" style="color: crimson">👋不想部署,直接体验</a>
+<a href="https://github.com/danny-avila/LibreChat">项目开源地址</a>
+</nav>
+<div class="container">
+<h1>交互式设计</h1>
+<p>这是一个让你快速填写变量的工具。你只需要按照提示输入变量，值自设置为user_provided[这意味这你可以部署完毕后再去设置]。每次填写完一个变量，就会跳转到下一个问题，直到回答完所有问题，出现一个下载按钮和复制按钮。你可以点击这些按钮来下载或复制之前的变量来一键部署</p>
+<div class="question" id="q1">
+<h2>[HOST]</h2>
+<p>✅允许访问的IP地址<br/><code>0.0.0.0</code>为所有地址</p>
+<input id="host" type="text" value="0.0.0.0"/>
+<button onclick="nextQuestion(1)">下一步</button>
+</div>
+<a href="https://zeabur.com/templates/JB402Y?referralCode=laogou717"><img alt="Deploy on Zeabur" src="https://zeabur.com/button.svg"/></a>
+<div class="question" id="q2" style="display:none;">
+<h2>[PORT]</h2>
+<p>网站的端口号,理论上可以自定义<br/>但是可能会出现冲突,因此推荐<code>7860</code></p>
+<input id="port" type="number" value="7860"/>
+<button onclick="nextQuestion(2)">下一步</button>
+</div>
+<div class="question" id="q3" style="display:none;">
+<h2>[ANTHROPIC_MODELS]</h2>
+<p>克劳德模型如果想使用克劳德<br/>这个是必须的</p>
+<input id="anthropic_models" type="text" value="claude-1,claude-instant-1,claude-2"/>
+<button onclick="nextQuestion(3)">下一步</button>
+</div>
+<div class="question" id="q4" style="display:none;">
+<h2>[ANTHROPIC_API_KEY]</h2>
+<p>克劳德API,可以在任何<br/>需要API的地方填入<code>user_provided</code><br/>这样我们就可以在网站内填写API</p>
+<input id="anthropic_api_key" type="text" value="user_provided"/>
+<button onclick="nextQuestion(4)">下一步</button>
+</div>
+<div class="question" id="q5" style="display:none;">
+<h2>[OPENAI_MODELS]</h2>
+<p>Chatgpt模型</p>
+<input id="openai_models" type="text" value="gpt-3.5-turbo,gpt-3.5-turbo-16k,gpt-3.5-turbo-0301,llama-2-70b-chat"/>
+<button onclick="nextQuestion(5)">下一步</button>
+</div>
+<div class="question" id="q6" style="display:none;">
+<h2>[CHATGPT_TOKEN]</h2>
+<p>ChatGPT的登陆token<code>accesstoken</code><br/>或者使用<code>免费共享Token</code></p>
+<input id="chatgpt_token" type="text" value="user_provided"/>
+<button onclick="nextQuestion(6)">下一步</button>
+</div>
+<div class="question" id="q7" style="display:none;">
+<h2>[OPENAI_API_KEY]</h2>
+<p>ChatGPT付费API或者第三方的转发API<br/>但需要设置对应端点 ⬇️</p>
+<input id="openai_api_key" type="text" value="user_provided"/>
+<button onclick="nextQuestion(7)">下一步</button>
+</div>
+<div class="question" id="q8" style="display:none;">
+<h2>[OPENAI_REVERSE_PROXY]</h2>
+<p>API端点第一个是pandora项目的端点;<br/>第二个是奇美拉项目的端点;<br/>其他的自行填写</p>
+<label><input name="openai_reverse_proxy" type="radio" value="https://ai.fakeopen.com/v1/chat/completions"/>https://ai.fakeopen.com/v1/chat/completions</label><br/>
+<label><input name="openai_reverse_proxy" type="radio" value="https://chimeragpt.adventblocks.cc/api"/>https://chimeragpt.adventblocks.cc/api</label><br/>
+<label><input name="openai_reverse_proxy" type="radio" value="https://chimeragpt.adventblocks.cc/api"/>https://api.openai.com/v1/chat/completions</label><br/>
+<label><input name="openai_reverse_proxy" type="radio" value=""/>其他:</label><input id="openai_reverse_proxy_custom" type="text"/>
+<button class="disabled" onclick="nextQuestion(8)">下一步</button>
+</div>
+<div class="question" id="q9" style="display:none;">
+<h2>[BINGAI_TOKEN]</h2>
+<p>必应的登陆cookie,_U数据</p>
+<input id="bingai_token" type="text" value="user_provided"/>
+<button onclick="nextQuestion(9)">下一步</button>
+</div>
+<div class="question" id="q10" style="display:none;">
+<h2>[PALM_KEY]</h2>
+<p>谷歌大语言模型的API</p>
+<input id="palm_key" type="text" value="user_provided"/>
+<button onclick="nextQuestion(10)">下一步</button>
+</div>
+<div class="question" id="q11" style="display:none;">
+<h2>[ALLOW_REGISTRATION]</h2>
+<p>是否允许注册✅</p>
+<label><input name="allow_registration" type="radio" value="true"/>是</label><br/>
+<label><input name="allow_registration" type="radio" value="false"/>否</label><br/>
+<button class="disabled" onclick="nextQuestion(11)">下一步</button>
+</div>
+<div class="question" id="q12" style="display:none;">
+<h2>[ALLOW_SOCIAL_LOGIN]</h2>
+<p>是否允许社交媒体登陆✅</p>
+<label><input name="allow_social_login" type="radio" value="true"/>是</label><br/>
+<label><input name="allow_social_login" type="radio" value="false"/>否</label><br/>
+<button class="disabled" onclick="nextQuestion(12)">下一步</button>
+</div>
+<div class="question" id="q13" style="display:none;">
+<h2>[ALLOW_SOCIAL_REGISTRATION]</h2>
+<p>是否允许社交媒体注册✅</p>
+<label><input name="allow_social_registration" type="radio" value="true"/>是</label><br/>
+<label><input name="allow_social_registration" type="radio" value="false"/>否</label><br/>
+<button class="disabled" onclick="nextQuestion(13)">下一步</button>
+</div>
+<div class="question" id="q14" style="display:none;">
+<h2>[MONGO_URI]</h2>
+<p>数据库,用来存放用户注册、登陆等信息</p>
+<input id="mongo_uri" type="text" value="user_provided"/>
+<button onclick="nextQuestion(14)">下一步</button>
+</div>
+<div class="question" id="q15" style="display:none;">
+<h2>[CREDS_KEY], [CREDS_IV], [JWT_SECRET]等</h2>
+<p>🔐加密数值</p>
+<label for="jwt_refresh_secret">JWT_REFRESH_SECRET:</label>
+<input id="jwt_refresh_secret"  placeholder="JWT_REFRESH_SECRET"name="jwt_refresh_secret" type="text"/>
+<input id="creds_key" placeholder="CREDS_KEY" type="text"/>
+<input id="creds_iv" placeholder="CREDS_IV" type="text"/>
+<input id="jwt_secret" placeholder="JWT_SECRET" type="text"/>
+<button onclick="generateKeys()">一键填入</button>
+<button onclick="nextQuestion(15)">下一步</button>
 </div>
 
+
+<div class="question" id="q16" style="display:none;">
+<h2>[SESSION_EXPIRY]</h2>
+<p>登陆过期时间</p>
+<input id="session_expiry" max="30" min="1" type="range" value="7"/>
+<input id="session_expiry_number" onchange="updateRange()" type="number" value="7"/>
+        天
+        <button onclick="nextQuestion(16)">下一步</button>
+</div>
+<div class="question" id="q17" style="display:none;">
+<h2>[DOMAIN_CLIENT]</h2>
+<p>公共域名[填入部署的项目地址]</p>
+<input id="domain_client" type="text" value="https://huggingface.co/spaces/laogou717/laogouchat"/>
+<button onclick="nextQuestion(17)">下一步</button>
+</div>
+<div class="question" id="q18" style="display:none;">
+<h2>[DOMAIN_SERVER]</h2>
+<p>数据库域名[填入部署的项目地址]</p>
+<input id="domain_server" type="text" value="https://huggingface.co/spaces/laogou717/laogouchat"/>
+<button onclick="nextQuestion(18)">下一步</button>
+</div>
+<div class="question" id="q19" style="display:none;">
+<h2>[APP_TITLE]</h2>
+<p>网站聊天时的名字可以填入任意内容</p>
+<input id="app_title" type="text" value="LAOGOU717"/>
+<button onclick="nextQuestion(19)">完成</button>
+</div>
+<div class="result" id="result" style="display:none;">
+<h2>结果</h2>
+<p>恭喜你，你已经完成了所有的问题，这是你的问题和答案：</p>
+<pre id="output"></pre>
+<button onclick="download()">下载</button>
+<button onclick="copy()">复制</button>
+</div>
+<div class="content">
+<p>获取变量值</p>
+<table>
+<tr>
+<th>获取地址</th>
+<th>备注</th>
+</tr>
+<tr>
+<td>https://chat.openai.com/api/auth/session</td>
+<td>Openai登陆token</td>
+</tr>
+<tr>
+<td><p> pk-this-is-a-real-free-pool-token-for-everyone</p>
+<p> pk-this-is-a-real-free-api-key-pk-for-everyone</p></td>
+<td>共享accesstoken</td>
+</tr>
+<tr>
+<td>https://console.anthropic.com</td>
+<td>克劳德API</td>
+</tr>
+<tr>
+<td>https://learn.microsoft.com/zh-cn/training/modules/implement-common-integration-features-finance-ops/10-exercise-1</td>
+<td>虚拟机验证</td>
+</tr>
+<tr>
+<td>https://account.mongodb.com/account/login</td>
+<td>mongodb数据库</td>
+</tr>
+</table></div>
 <script>
 
     // Get all the input elements
@@ -373,6 +348,7 @@
         creds_key.value = getRandomHex(32);
         creds_iv.value = getRandomHex(16);
         jwt_secret.value = getRandomHex(32);
+        document.getElementById("jwt_refresh_secret").value = getRandomHex(32);
     }
 
     // Define a function to update the range input
@@ -430,6 +406,7 @@
         text += "CREDS_KEY=" + creds_key.value + "\n";
         text += "CREDS_IV=" + creds_iv.value + "\n";
         text += "JWT_SECRET=" + jwt_secret.value + "\n";
+        text += "JWT_REFRESH_SECRET=" + document.getElementById("jwt_refresh_secret").value + "\n";
         
 let expiryDays = parseInt(session_expiry_number.value);
 if (!isNaN(expiryDays)) {
@@ -492,4 +469,4 @@ button.classList.remove("disabled");
 session_expiry.addEventListener("input", () => {
 session_expiry_number.value = session_expiry.value;
 });
-</script> </body> </html> 
+</script> </div></body> </html> 
