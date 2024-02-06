@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>LXJGZS简介</title>
+        <title>SAY!</title>
     <link rel="icon" type="image/x-icon" id="favicon" href="assets/ico/愤怒.svg" />
     <script>
         // 随机选择一个图标
@@ -186,11 +186,33 @@
          background-color: #4cae4c;
      }
  </style>
- <form action="sendmail.php" method="post">
-     <label for="thoughts">请输入你的想法:</label>
-     <textarea id="thoughts" name="thoughts" placeholder="在这里输入哦" rows="4"></textarea>
-     <button type="submit">发送</button>
+
+ <form id="downloadForm">
+     <label for="message">来这里说吧：</label>
+     <textarea id="message" name="message" placeholder="来这里说吧..." rows="4"></textarea>
+     <button type="button" id="downloadButton">下载并操作</button>
  </form>
+ <script>
+     document.getElementById('downloadButton').addEventListener('click', function() {
+         var message = document.getElementById('message').value;
+         var fileName = 'message.txt';
+         var content = message + '\n\n' + '亲爱的用户，你好！\n你想说的话我们已经记下。\n请将你说的话，复制下来，发送到邮箱：ugq_it86prxkz@dingtalk.com\n我们将会给您妥善的处理。\n站长：LXJ';
+         // 创建一个 Blob 对象
+         var blob = new Blob([content], { type: 'text/plain' });
+         // 创建一个指向该 Blob 的 URL
+         var url = URL.createObjectURL(blob);
+         // 创建一个 a 标签来下载该文件
+         var a = document.createElement('a');
+         a.style.display = 'none';
+         a.href = url;
+         a.download = fileName;
+         document.body.appendChild(a);
+         a.click();
+         // 清理
+         document.body.removeChild(a);
+         URL.revokeObjectURL(url);
+     });
+ </script>
                         <div class="small text-center text-muted fst-italic">LXJGZS 2024</div>
                     </div>
                 </div>
