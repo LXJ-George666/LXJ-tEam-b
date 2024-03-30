@@ -18,7 +18,16 @@ bottom: 80px;
   max-width:70%;  /* 图片最大宽度为容器宽度 */
   height: auto;  /* 高度自动 */
 }
+            body {
+                background: black;
+                padding: 20px;
+            }
 
+            marquee {
+                font-weight: bolder;
+                font-size: 40px;
+                color: white;
+            }
 		</style>
 
 <link rel="stylesheet" href="path-to-your-node_modules-folder/antd/dist/antd.css">
@@ -105,7 +114,7 @@ bottom: 80px;
 			<!--文章添加-->
 			<!--置顶-->
                         <a href="gg.html"><!--链接-->                  
-			<h1 class="post-title" style="text-align: center;">公告&nbsp;</h1><!--标题-->
+			<h1 marquee direction="right" class="post-title" style="text-align: center;">公告&nbsp;</h1><!--标题-->
 			<br>
 			<!--第一个-->			
                         <a href="post.html"><!--链接-->                  
