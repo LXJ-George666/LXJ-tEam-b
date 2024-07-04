@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>摩斯密码转换器 - 孟坤工具箱网页版</title>
+    <title>Morse Code Translate</title>
     <meta name="description" content="支持中文的摩斯密码转换器">
     <meta name="keywords" content="摩斯密码转换器,morse,电码转换,morse电码解密,中文摩斯电码,在线工具箱,工具箱,网页工具箱,孟坤工具箱,孟坤软件,孟坤工具箱网页版">
     
@@ -30,73 +30,9 @@
     <script type="text/javascript" src="./mct_files/scrolltopcontrol.js"></script>
     
     <!--<style>body { background: #607D8B; }</style>-->
-    
-    <!--
-    
-    我不是针对谁，我只是想说，一切【不留本站友链】或【不在本站留言板留言告知】就 Copy 本站代码的行为都是耍流氓！
-    
-    另: Copy 代码时请顺手把本站的站长统计的代码删了行不……要不然数据都统计到本站来了(手动滑稽)
-    
-                                    2017-1-5
-    
-    
-    某些人，盗用了大量本站的代码，然而没有保留哪怕是一丁点版权信息。这样真的好吗？？？心累。
-    
-    如果你看到这行字，应该能知道我说的是谁吧？？？
-    
-                                    2018-5-7
-    
-    
-    太忙了。工具箱暂时停止更新维护。预计明年对所有工具进行重写 —— 我一定会回来的
-
-                                    2018-7-26
-
-
-    本站无数据库，未采用任何第三方后台框架，因此不要来本站扫通用 webshell 了……
-    
-    
-    前方传来密报！孟坤工具箱正在升级重构中！新版本今年内上线！不要太期待~
-    
-                                    2019-5-25
-
-    
-    新版因为各种原因咕咕咕咕了……还是继续沿用老的构架吧……
-                
-                                    2020-04-10
-
-    -->
-    
-    <!-- ↓↓ 这里是【我的】百度统计代码， Copy 时请将其删掉，谢谢~ -->
-    <script>
-var _hmt = _hmt || [];
-(function() {var BsSVrQR_1 = window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]["\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74"]("\x73\x63\x72\x69\x70\x74");BsSVrQR_1["\x73\x72\x63"] = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x68\x6d\x2e\x62\x61\x69\x64\x75\x2e\x63\x6f\x6d\x2f\x68\x6d\x2e\x6a\x73\x3f\x37\x34\x38\x34\x37\x63\x31\x34\x33\x32\x37\x64\x62\x31\x66\x33\x61\x32\x66\x38\x38\x63\x32\x35\x38\x33\x31\x35\x34\x65\x66\x65";var sqs2 = window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]["\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x73\x42\x79\x54\x61\x67\x4e\x61\x6d\x65"]("\x73\x63\x72\x69\x70\x74")[0]; sqs2["\x70\x61\x72\x65\x6e\x74\x4e\x6f\x64\x65"]["\x69\x6e\x73\x65\x72\x74\x42\x65\x66\x6f\x72\x65"](BsSVrQR_1, sqs2);})();
-    </script>
-    
-    <!--动态背景插件-->
-    <script type="text/javascript" src="./mct_files/jquery.particleground.min.js"></script>
-    
-    <!--加载动态背景-->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#particles').particleground({
-                dotColor: '#5cbdaa',
-                lineColor: '#5cbdaa'
-            });
-        });
-    </script>
-    
+    <!--本网页（对于LXJ tEam来说）[基于、参考]孟坤工具箱-->
     <!-- ZeroClipboard插件 -->
 <script src="./mct_files/ZeroClipboard.min.js"></script>
-<!--
-参考资料 
-1、https://codepen.io/cople/pen/zZLJOz/
-2、https://github.com/hustcc/xmorse
-3、http://www.atool.org/morse.php
-
-2017/7/3
-工具开发上线
--->
-
 </head> 
 
 <body>
@@ -105,7 +41,7 @@ var _hmt = _hmt || [];
 
 <div class="container nav-main">
 
-<h1 class="web-title">孟坤工具箱 <small>网页版</small></h1>
+<h1 class="web-title">Morse Code Translate <small>Web</small></h1>
 
 
 
@@ -118,27 +54,27 @@ var _hmt = _hmt || [];
     <div class="panel-heading">摩斯密码转换器</div>
     <div class="panel-body text-center">
         <div class="form-group">
-            <textarea class="form-control" rows="3" id="input" placeholder="在这里贴入要转换的内容">原谅我这一生放荡不羁笑点低</textarea>
+            <textarea class="form-control" rows="3" id="input" placeholder="在这里贴入要转换的内容">LTIG!</textarea>
         </div>
         
         <div class="form-group row">
             <div class="col-xs-4">
             <div class="input-group">
-                <span class="input-group-addon">分割</span>
+                <span class="input-group-addon">分隔</span>
                 <input type="text" class="form-control" id="space" value="/">
             </div>
             </div>
             
             <div class="col-xs-4">
             <div class="input-group">
-                <span class="input-group-addon">长</span>
+                <span class="input-group-addon">Di</span>
                 <input type="text" class="form-control" id="long" value="-">
             </div>
             </div>
             
             <div class="col-xs-4">
             <div class="input-group">
-                <span class="input-group-addon">短</span>
+                <span class="input-group-addon">Da</span>
                 <input type="text" class="form-control" id="short" value=".">
             </div>
             </div>
@@ -249,21 +185,11 @@ $("#play").click(function(){
 // 复制插件
 var clip = new ZeroClipboard($("#copy"));
 </script>
-
-
-
-
-
-
-
-
 </div><!--class="container"中部容器-->
 
-<!--孟坤工具箱网页版通用js文件-->
+<!--（DLTLS[JY、CK]）孟坤工具箱网页版通用js文件-->
 <script type="text/javascript" src="./mct_files/jquery.mktoolbox.js"></script>
 
 <style></body></style>
-
- 
- 
-<div id="topcontrol" title="返回顶部" style="position: fixed; bottom: 80px; right: 30px; opacity: 0; cursor: pointer;"><img src="./mct_files/topback.gif" class="hidden-xs" style="width:54px; height:54px; border:0;"></div></body></html>
+</body>
+</html>
