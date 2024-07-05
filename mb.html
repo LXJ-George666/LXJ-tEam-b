@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///media/LXJGZS/SD%20CARD/Github%20Project/LXJ-tEam/mb.html -->
+<html style="height: 100%"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    
+    <title>秒表</title>
+    
+    <link rel="stylesheet" href="./mb_files/layui.css" media="all">
+    <link rel="stylesheet" href="./mb_files/main.css" type="text/css">
+
+    <link rel="icon" href="./assets/ico/LXJ tEam.png">
+    
+    <script src="./mb_files/hm.js"></script><script src="./mb_files/f.txt"></script><script src="./mb_files/hm(1).js"></script><script type="text/javascript" src="./mb_files/common_util-8598c49e3e0d0ad56e20749b927da8d5.js" charset="UTF-8"></script>
+
+    <style type="text/css">
+        .start_class {
+            color: #009688;
+        }
+
+        .pause_class {
+            color: #FF5722;
+        }
+
+        #tickContainer div {
+            white-space: pre-wrap;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+<link id="layuicss-laydate" rel="stylesheet" href="./mb_files/laydate.css" media="all"><link id="layuicss-layer" rel="stylesheet" href="./mb_files/layer.css" media="all"><link id="layuicss-skincodecss" rel="stylesheet" href="./mb_files/code.css" media="all"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9uiHDzQFAhqALUhTgTYJcz9XrGH2y0/9AORwCSapUO/f7Uh7ysIzyszNkuWDLqNYg8446Uj48XIstBW1qv/wAQAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3Mjc4MjcxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9R+gkZL3TWq+Z7RJ2L0c7ZN7FZD5z4mHmVvjrPitg/EMz9P3j5d3W7Vw5ZR9jtJGmWKltM4BO3smNzpCgwYuwwAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3Mjc4MjcxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9uiHDzQFAhqALUhTgTYJcz9XrGH2y0/9AORwCSapUO/f7Uh7ysIzyszNkuWDLqNYg8446Uj48XIstBW1qv/wAQAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3Mjc4MjcxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9R+gkZL3TWq+Z7RJ2L0c7ZN7FZD5z4mHmVvjrPitg/EMz9P3j5d3W7Vw5ZR9jtJGmWKltM4BO3smNzpCgwYuwwAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3Mjc4MjcxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="https://fundingchoicesmessages.google.com/i/ca-pub-8892467592976349?href=https%3A%2F%2Fwww.lddgo.net%2Fcommon%2Fstopwatch&amp;ers=2"></script></head>
+
+<body class="layui-layout-body" style="height:100%; overflow: auto;">
+<div class="layui-layout layui-layout-admin" style="height:100%">
+
+    <div>
+    <style type="text/css">
+        #selectLangAnchor > span {
+            display: none;
+        }
+
+        #mobile_menu_anchor > span {
+            display: none;
+        }
+
+        #userCenterAnchor > span {
+            display: none;
+        }
+
+        .normal_site_title_menu_zh {
+            display: none;
+        }
+
+        .normal_site_title_menu_en {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .normal_site_title_menu_zh {
+                display: unset;
+                position: absolute;
+                top: 16px;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 20px;
+                left: calc(50vw - 75px);
+                cursor: pointer;
+            }
+
+            .normal_site_title_menu_en {
+                display: unset;
+                position: absolute;
+                top: 18px;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 20px;
+                left: calc(50vw - 70px);
+                cursor: pointer;
+            }
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        function eraseCookie(sKey, sPath, sDomain) {
+            document.cookie = encodeURIComponent(sKey) +
+                "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" +
+                (sDomain ? "; domain=" + sDomain : "") +
+                (sPath ? "; path=" + sPath : "");
+        }
+
+        function logoutHandler() {
+            eraseCookie('access_token', '/', 'lddgo.net');
+            window.location.href = handleWebUrl("/index");
+        }
+
+        function gotoIndex() {
+            window.location.href = handleWebUrl("/index");
+        }
+
+        function gotoCenter() {
+            window.location.href = handleWebUrl("/web/user/center/index");
+        }
+    </script>
+
+    <input type="hidden" value="false" id="commonLogin">
+
+    
+
+</div>
+
+    <div class="main_content" style="min-height: calc(100% - 130px)">
+
+        <div>
+
+            <div>
+    <link rel="stylesheet" href="./mb_files/share.min-96b5f943f1d0b7d1c54e204a67a8e7e6.css" type="text/css">
+    <style type="text/css">
+
+        .tag_container {
+            line-height: 24px;
+        }
+
+        .tag_anchor {
+            color: #01AAED;
+            margin-right: 15px;
+        }
+
+        .tag_container a:nth-child(2) {
+            margin-left: 15px;
+        }
+    </style>
+    <script type="text/javascript" src="./mb_files/social-share.min-82bca2f753e7a9c995697c7758b34219.js"></script>
+    
+
+    
+
+    <div>
+        <h1 class="main_title">秒表</h1>
+    </div>
+
+    
+
+    <div style="margin-top: 16px;margin-bottom: 20px;">
+        <hr>
+    </div>
+    
+
+</div>
+            
+            
+            
+            
+
+            <div class="layui-form layui-form-pane" lay-filter="stopwatchForm">
+
+                <div style="width: 100%;max-width: 350px;margin-bottom: 15px;">
+                    <div id="countDownString" style="font-size: 60px;">00:00.000</div>
+                </div>
+
+                <div class="layui-form-item">
+
+                    <div class="layui-inline">
+                        <button class="layui-btn layui-btn-primary" lay-submit="" lay-filter="startStopwatch" id="startStopwatch">
+                            
+                            <span id="startText">开始</span>
+                        </button>
+                    </div>
+
+                    <div class="layui-inline">
+                        <button class="layui-btn layui-btn-primary" id="startCount">计次</button>
+                    </div>
+
+                    <div class="layui-inline">
+                        <button class="layui-btn layui-btn-primary" id="startDownload">下载</button>
+                    </div>
+
+                    <div class="layui-inline">
+                        <button class="layui-btn layui-btn-primary" id="startReset">重置</button>
+                    </div>
+
+                </div>
+
+                <div id="tickContainer">
+                    <div id="lastTick"></div>
+                </div>
+
+
+            </div>
+
+            
+
+
+            
+
+            
+
+            
+
+        </div>
+
+    </div>
+
+
+    <div>
+    <style type="text/css">
+        @media screen and (max-width: 768px) {
+            .footer_block_area {
+                display: block;
+            }
+
+            .lang_common_footer_margin_adjust {
+                margin-left: unset !important;
+                margin-top: 15px;
+            }
+
+            .adjust_footer_height {
+                height: 210px !important;
+            }
+        }
+    </style>
+    <div class="layui-header adjust_footer_height">
+
+        <div class="layui-layout-left" style="color:rgba(255,255,255,.7);margin-top: 20px;margin-left:20px;z-index: -1000;left:0;">
+            <span class="footer_block_area">
+                2024 LXJ tEam
+                             参考LDDGO
+            </span>
+
+            
+            
+            
+            
+            
+            
+            
+        </div>
+
+
+        
+    </div>
+</div>
+</div>
+
+
+    <script type="text/javascript" src="./mb_files/layui.all.js" charset="UTF-8"></script>
+
+<script type="text/javascript" src="./mb_files/stopwatch-ff70c4dd8fe85e7b88b283a5d97952f9.js" charset="UTF-8"></script>
+<script type="text/javascript" src="./mb_files/download.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="./mb_files/tool_note-373d09092c44e960f52e8fce2afe21ad.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    registerStopwatchEvent();
+</script>
+
+<div>
+    <script type="text/javascript" src="./mb_files/side_bar-55c74913a1fcbdba7799ad121f008405.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="./mb_files/clipboard.min.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        function initCopyToolLink() {
+            if (!ClipboardJS) {
+                return;
+            }
+            let copyToolLinkStaticElem = document.getElementById("copyToolLinkStatic");
+            if (!copyToolLinkStaticElem) {
+                return;
+            }
+            const clipboard = new ClipboardJS(copyToolLinkStaticElem, {
+                text: function (trigger) {
+                    return window.location.href;
+                },
+            });
+            clipboard.on('success', function (e) {
+                layui.layer.msg(getLangMsg("user.operator.copySuccess"));
+            });
+        }
+
+        function initToolNoteIframe() {
+            try {
+                let toolNoteIframe = document.getElementById("toolNoteIframe");
+                if (!toolNoteIframe) {
+                    return;
+                }
+                toolNoteIframe.onload = function () {
+                    toolNoteIframe.contentWindow.setParentLayui(layui);
+                };
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        function saveToolHistory() {
+            try {
+                let $ = layui.$;
+                let toolID = $("#toolID").val();
+                if (!toolID) {
+                    return;
+                }
+                const MAX_HISTORY_TOOL_COUNT = 3;
+                let url = window.location.href;
+                let title = document.title;
+                let lastUseToolTable = "lastUseToolTable";
+                let lastUseToolKey = "lastUseToolKey";
+                let historyArr = null;
+                let historyTable = layui.data(lastUseToolTable);
+                if (historyTable) {
+                    historyArr = historyTable[lastUseToolKey];
+                }
+                if (historyArr) {
+                    try {
+                        historyArr = JSON.parse(historyArr);
+                        let toolIndex = historyArr.findIndex(item => item.toolID === toolID);
+                        if (toolIndex >= 0) {  //已经有该工具
+                            historyArr.splice(toolIndex, 1);
+                        }
+                        if (historyArr.length >= MAX_HISTORY_TOOL_COUNT) {
+                            historyArr.splice(2);
+                        }
+                    } catch (e) {
+                        historyArr = [];
+                    }
+                } else {
+                    historyArr = [];
+                }
+                historyArr.splice(0, 0, {
+                    toolID: toolID,
+                    title: title,
+                    url: url,
+                });
+                let historyArrJson = JSON.stringify(historyArr);
+                layui.data(lastUseToolTable, {
+                    key: lastUseToolKey,
+                    value: historyArrJson,
+                })
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        function initBeforeBody() {
+            initCopyToolLink();
+            initToolNoteIframe();
+            saveToolHistory();
+        }
+
+        initBeforeBody();
+    </script>
+    <!--    百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?75a21f203d323a988b1d8ce0eeae4de5";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    
+</div>
+
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./mb_files/ads.html" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./mb_files/saved_resource.html"></iframe><iframe src="./mb_files/aframe.html" width="0" height="0" style="display: none;"></iframe><div class="uos-ai-float"> 
+            <div class="uos-ai-assiant">
+                <div class="uos-icon">
+                <img src="chrome-extension://mocfkhgbcoeeadcmfioceifahjjgmdkp/assets/svg/logo.svg">
+                </div>
+                <div class="uos-prompt" id="pinned-prompt">翻译为中文</div>
+                <div class="dropdown" id="ai-dropdown">
+                    <img src="chrome-extension://mocfkhgbcoeeadcmfioceifahjjgmdkp/assets/svg/arrow-model.svg">
+                </div>
+            </div>
+            <div class="uos-ai-assiant-prompt" id="ai-assiant-prompt">
+                <div class="prompt-top">
+                    <span>提示</span>
+                    <div class="add" id="add-btn">
+                        <img src="chrome-extension://mocfkhgbcoeeadcmfioceifahjjgmdkp/assets/svg/add.svg">
+                    </div>
+                </div>
+                <div class="prompt-list" id="prompt-list">
+                    <div class="prompt-item pinned" data-index="0">
+        <span class="name">翻译为中文</span>
+        <svg data-index="0" class="prompt-edit default" width="10.9999832px" height="11.0000133px" viewBox="0 0 10.9999832 11.0000133" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3284.000000, -159.999987)" fill-rule="nonzero">
+                <path d="M3287.52957,169.125068 L3285.26263,169.561773 C3285.14458,169.584513 3285.03046,169.507255 3285.00772,169.389212 C3285.00223,169.360724 3285.00249,169.331426 3285.00849,169.30304 L3285.46306,167.151697 L3291.29053,161.588176 C3291.45877,161.427553 3291.72356,161.427568 3291.89179,161.588211 L3293.32829,162.959971 C3293.48044,163.105259 3293.50432,163.334397 3293.39667,163.505897 L3293.32823,163.589698 L3287.52957,169.125068 Z M3294.86522,161.491761 L3293.42838,160.1204 C3293.26012,159.959808 3292.99534,159.959855 3292.82714,160.120506 L3292.43441,160.495595 C3292.28228,160.640896 3292.25842,160.870036 3292.36608,161.041527 L3292.43442,161.125215 L3293.87089,162.497192 C3294.03918,162.657925 3294.30412,162.657878 3294.47235,162.497085 L3294.86544,162.121381 C3295.01752,161.976025 3295.0413,161.746877 3294.93358,161.575425 L3294.86522,161.491761 Z M3284.47801,170.043984 L3292.5337,170.043984 C3292.79769,170.043984 3293.0117,170.257996 3293.0117,170.521992 C3293.0117,170.785989 3292.79769,171 3292.5337,171 L3284.47801,171 C3284.21401,171 3284,170.785989 3284,170.521992 C3284,170.257996 3284.21401,170.043984 3284.47801,170.043984 Z" id="edit"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-no-pin" width="12px" height="12px" viewBox="0 0 12 12" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -159.000000)" fill-rule="nonzero">
+                <path d="M3312.99788,159.001906 C3313.12975,159.013538 3313.26089,159.077807 3313.36243,159.180555 L3316.82116,162.678989 C3317.03249,162.892799 3317.06055,163.211641 3316.88384,163.39122 C3316.35212,163.93449 3315.55853,164.155333 3314.72741,163.991321 L3312.85413,166.545917 C3313.42262,168.108094 3313.22013,169.736866 3312.30366,170.854845 C3312.22316,170.953785 3312.09886,171.006206 3311.96087,170.999413 C3311.82288,170.99262 3311.68377,170.927233 3311.57724,170.819085 L3308.76119,167.9701 L3306.18913,170.58267 C3306.05966,170.714001 3305.84984,170.738165 3305.65738,170.643907 C3305.46493,170.549648 3305.32769,170.355502 3305.3096,170.151897 C3305.29828,170.023286 3305.3353,169.898606 3305.42339,169.808752 L3307.99572,167.19554 L3305.17906,164.347169 C3305.07237,164.239335 3305.0077,164.098574 3305.00064,163.958803 C3304.99358,163.819031 3305.04477,163.692923 3305.14187,163.610865 C3306.30363,162.62781 3308.04265,162.45469 3309.6463,163.141592 L3312.07204,161.305781 C3311.90803,160.463572 3312.12421,159.658481 3312.65934,159.118539 C3312.74423,159.03223 3312.86602,158.990273 3312.99788,159.001906 Z M3313.161,160.586 L3313.15516,160.627167 C3313.14268,160.771848 3313.15111,160.927146 3313.18273,161.08949 C3313.26529,161.513445 3313.0993,161.947421 3312.75489,162.20807 L3310.32915,164.04388 C3310.00507,164.289144 3309.57436,164.341767 3309.20076,164.181743 C3308.25841,163.778101 3307.28729,163.760232 3306.51815,164.082438 L3308.80031,166.399902 C3308.92467,166.525655 3309.01355,166.673288 3309.06697,166.830322 L3309.082,166.886 L3309.13,166.900055 C3309.24964,166.941188 3309.36376,167.002952 3309.4668,167.085354 L3309.56595,167.174635 L3311.825,169.459 L3311.88827,169.286843 C3312.09408,168.655395 3312.09462,167.91219 3311.86621,167.159025 L3311.79079,166.932879 C3311.66156,166.577746 3311.71814,166.181536 3311.94162,165.876776 L3313.81491,163.322181 C3314.07458,162.968067 3314.51568,162.796161 3314.94649,162.881177 C3315.10256,162.911976 3315.25159,162.919991 3315.39047,162.907236 L3315.447,162.899 L3313.161,160.586 Z" id="not-pin"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-pin" width="10px" height="12.5000085px" viewBox="0 0 10 12.5000085" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -192.999991)" fill-rule="nonzero">
+                <path d="M3310.53769,201.710098 L3314.46887,201.729442 C3314.61785,201.730414 3314.75978,201.682381 3314.86031,201.596974 C3314.96083,201.511567 3315.01078,201.396574 3314.99805,201.279844 C3314.85901,199.956365 3313.86998,198.765523 3312.3918,198.119848 L3311.92075,195.239455 C3312.61157,194.805093 3313.00942,194.144925 3313.00183,193.445567 C3312.99997,193.21378 3312.75936,193.024736 3312.46434,193.023279 L3307.63649,193 C3307.49473,192.99929 3307.35911,193.042863 3307.25948,193.121137 C3307.15985,193.19941 3307.10439,193.305965 3307.10531,193.417344 C3307.10822,194.116753 3307.51649,194.780941 3308.21448,195.221789 L3307.80344,197.99444 C3306.21358,198.591687 3305.12619,199.836238 3305.00133,201.231659 C3304.99083,201.348217 3305.04275,201.463531 3305.14459,201.549815 C3305.24643,201.636099 3305.38895,201.68553 3305.53782,201.686196 L3309.469,201.704749 L3309.49534,205.078285 C3309.4965,205.194049 3309.55726,205.299216 3309.65432,205.375471 C3309.8081,205.496076 3310.03803,205.532979 3310.23703,205.468991 C3310.43603,205.405003 3310.56496,205.252708 3310.56377,205.083039 L3310.53769,201.710098 Z" id="pin"></path>
+            </g>
+        </g>
+        </svg>
+        </div><div class="prompt-item " data-index="1">
+        <span class="name">翻译为英文</span>
+        <svg data-index="1" class="prompt-edit default" width="10.9999832px" height="11.0000133px" viewBox="0 0 10.9999832 11.0000133" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3284.000000, -159.999987)" fill-rule="nonzero">
+                <path d="M3287.52957,169.125068 L3285.26263,169.561773 C3285.14458,169.584513 3285.03046,169.507255 3285.00772,169.389212 C3285.00223,169.360724 3285.00249,169.331426 3285.00849,169.30304 L3285.46306,167.151697 L3291.29053,161.588176 C3291.45877,161.427553 3291.72356,161.427568 3291.89179,161.588211 L3293.32829,162.959971 C3293.48044,163.105259 3293.50432,163.334397 3293.39667,163.505897 L3293.32823,163.589698 L3287.52957,169.125068 Z M3294.86522,161.491761 L3293.42838,160.1204 C3293.26012,159.959808 3292.99534,159.959855 3292.82714,160.120506 L3292.43441,160.495595 C3292.28228,160.640896 3292.25842,160.870036 3292.36608,161.041527 L3292.43442,161.125215 L3293.87089,162.497192 C3294.03918,162.657925 3294.30412,162.657878 3294.47235,162.497085 L3294.86544,162.121381 C3295.01752,161.976025 3295.0413,161.746877 3294.93358,161.575425 L3294.86522,161.491761 Z M3284.47801,170.043984 L3292.5337,170.043984 C3292.79769,170.043984 3293.0117,170.257996 3293.0117,170.521992 C3293.0117,170.785989 3292.79769,171 3292.5337,171 L3284.47801,171 C3284.21401,171 3284,170.785989 3284,170.521992 C3284,170.257996 3284.21401,170.043984 3284.47801,170.043984 Z" id="edit"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-no-pin" width="12px" height="12px" viewBox="0 0 12 12" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -159.000000)" fill-rule="nonzero">
+                <path d="M3312.99788,159.001906 C3313.12975,159.013538 3313.26089,159.077807 3313.36243,159.180555 L3316.82116,162.678989 C3317.03249,162.892799 3317.06055,163.211641 3316.88384,163.39122 C3316.35212,163.93449 3315.55853,164.155333 3314.72741,163.991321 L3312.85413,166.545917 C3313.42262,168.108094 3313.22013,169.736866 3312.30366,170.854845 C3312.22316,170.953785 3312.09886,171.006206 3311.96087,170.999413 C3311.82288,170.99262 3311.68377,170.927233 3311.57724,170.819085 L3308.76119,167.9701 L3306.18913,170.58267 C3306.05966,170.714001 3305.84984,170.738165 3305.65738,170.643907 C3305.46493,170.549648 3305.32769,170.355502 3305.3096,170.151897 C3305.29828,170.023286 3305.3353,169.898606 3305.42339,169.808752 L3307.99572,167.19554 L3305.17906,164.347169 C3305.07237,164.239335 3305.0077,164.098574 3305.00064,163.958803 C3304.99358,163.819031 3305.04477,163.692923 3305.14187,163.610865 C3306.30363,162.62781 3308.04265,162.45469 3309.6463,163.141592 L3312.07204,161.305781 C3311.90803,160.463572 3312.12421,159.658481 3312.65934,159.118539 C3312.74423,159.03223 3312.86602,158.990273 3312.99788,159.001906 Z M3313.161,160.586 L3313.15516,160.627167 C3313.14268,160.771848 3313.15111,160.927146 3313.18273,161.08949 C3313.26529,161.513445 3313.0993,161.947421 3312.75489,162.20807 L3310.32915,164.04388 C3310.00507,164.289144 3309.57436,164.341767 3309.20076,164.181743 C3308.25841,163.778101 3307.28729,163.760232 3306.51815,164.082438 L3308.80031,166.399902 C3308.92467,166.525655 3309.01355,166.673288 3309.06697,166.830322 L3309.082,166.886 L3309.13,166.900055 C3309.24964,166.941188 3309.36376,167.002952 3309.4668,167.085354 L3309.56595,167.174635 L3311.825,169.459 L3311.88827,169.286843 C3312.09408,168.655395 3312.09462,167.91219 3311.86621,167.159025 L3311.79079,166.932879 C3311.66156,166.577746 3311.71814,166.181536 3311.94162,165.876776 L3313.81491,163.322181 C3314.07458,162.968067 3314.51568,162.796161 3314.94649,162.881177 C3315.10256,162.911976 3315.25159,162.919991 3315.39047,162.907236 L3315.447,162.899 L3313.161,160.586 Z" id="not-pin"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-pin" width="10px" height="12.5000085px" viewBox="0 0 10 12.5000085" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -192.999991)" fill-rule="nonzero">
+                <path d="M3310.53769,201.710098 L3314.46887,201.729442 C3314.61785,201.730414 3314.75978,201.682381 3314.86031,201.596974 C3314.96083,201.511567 3315.01078,201.396574 3314.99805,201.279844 C3314.85901,199.956365 3313.86998,198.765523 3312.3918,198.119848 L3311.92075,195.239455 C3312.61157,194.805093 3313.00942,194.144925 3313.00183,193.445567 C3312.99997,193.21378 3312.75936,193.024736 3312.46434,193.023279 L3307.63649,193 C3307.49473,192.99929 3307.35911,193.042863 3307.25948,193.121137 C3307.15985,193.19941 3307.10439,193.305965 3307.10531,193.417344 C3307.10822,194.116753 3307.51649,194.780941 3308.21448,195.221789 L3307.80344,197.99444 C3306.21358,198.591687 3305.12619,199.836238 3305.00133,201.231659 C3304.99083,201.348217 3305.04275,201.463531 3305.14459,201.549815 C3305.24643,201.636099 3305.38895,201.68553 3305.53782,201.686196 L3309.469,201.704749 L3309.49534,205.078285 C3309.4965,205.194049 3309.55726,205.299216 3309.65432,205.375471 C3309.8081,205.496076 3310.03803,205.532979 3310.23703,205.468991 C3310.43603,205.405003 3310.56496,205.252708 3310.56377,205.083039 L3310.53769,201.710098 Z" id="pin"></path>
+            </g>
+        </g>
+        </svg>
+        </div><div class="prompt-item " data-index="2">
+        <span class="name">总结</span>
+        <svg data-index="2" class="prompt-edit default" width="10.9999832px" height="11.0000133px" viewBox="0 0 10.9999832 11.0000133" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3284.000000, -159.999987)" fill-rule="nonzero">
+                <path d="M3287.52957,169.125068 L3285.26263,169.561773 C3285.14458,169.584513 3285.03046,169.507255 3285.00772,169.389212 C3285.00223,169.360724 3285.00249,169.331426 3285.00849,169.30304 L3285.46306,167.151697 L3291.29053,161.588176 C3291.45877,161.427553 3291.72356,161.427568 3291.89179,161.588211 L3293.32829,162.959971 C3293.48044,163.105259 3293.50432,163.334397 3293.39667,163.505897 L3293.32823,163.589698 L3287.52957,169.125068 Z M3294.86522,161.491761 L3293.42838,160.1204 C3293.26012,159.959808 3292.99534,159.959855 3292.82714,160.120506 L3292.43441,160.495595 C3292.28228,160.640896 3292.25842,160.870036 3292.36608,161.041527 L3292.43442,161.125215 L3293.87089,162.497192 C3294.03918,162.657925 3294.30412,162.657878 3294.47235,162.497085 L3294.86544,162.121381 C3295.01752,161.976025 3295.0413,161.746877 3294.93358,161.575425 L3294.86522,161.491761 Z M3284.47801,170.043984 L3292.5337,170.043984 C3292.79769,170.043984 3293.0117,170.257996 3293.0117,170.521992 C3293.0117,170.785989 3292.79769,171 3292.5337,171 L3284.47801,171 C3284.21401,171 3284,170.785989 3284,170.521992 C3284,170.257996 3284.21401,170.043984 3284.47801,170.043984 Z" id="edit"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-no-pin" width="12px" height="12px" viewBox="0 0 12 12" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -159.000000)" fill-rule="nonzero">
+                <path d="M3312.99788,159.001906 C3313.12975,159.013538 3313.26089,159.077807 3313.36243,159.180555 L3316.82116,162.678989 C3317.03249,162.892799 3317.06055,163.211641 3316.88384,163.39122 C3316.35212,163.93449 3315.55853,164.155333 3314.72741,163.991321 L3312.85413,166.545917 C3313.42262,168.108094 3313.22013,169.736866 3312.30366,170.854845 C3312.22316,170.953785 3312.09886,171.006206 3311.96087,170.999413 C3311.82288,170.99262 3311.68377,170.927233 3311.57724,170.819085 L3308.76119,167.9701 L3306.18913,170.58267 C3306.05966,170.714001 3305.84984,170.738165 3305.65738,170.643907 C3305.46493,170.549648 3305.32769,170.355502 3305.3096,170.151897 C3305.29828,170.023286 3305.3353,169.898606 3305.42339,169.808752 L3307.99572,167.19554 L3305.17906,164.347169 C3305.07237,164.239335 3305.0077,164.098574 3305.00064,163.958803 C3304.99358,163.819031 3305.04477,163.692923 3305.14187,163.610865 C3306.30363,162.62781 3308.04265,162.45469 3309.6463,163.141592 L3312.07204,161.305781 C3311.90803,160.463572 3312.12421,159.658481 3312.65934,159.118539 C3312.74423,159.03223 3312.86602,158.990273 3312.99788,159.001906 Z M3313.161,160.586 L3313.15516,160.627167 C3313.14268,160.771848 3313.15111,160.927146 3313.18273,161.08949 C3313.26529,161.513445 3313.0993,161.947421 3312.75489,162.20807 L3310.32915,164.04388 C3310.00507,164.289144 3309.57436,164.341767 3309.20076,164.181743 C3308.25841,163.778101 3307.28729,163.760232 3306.51815,164.082438 L3308.80031,166.399902 C3308.92467,166.525655 3309.01355,166.673288 3309.06697,166.830322 L3309.082,166.886 L3309.13,166.900055 C3309.24964,166.941188 3309.36376,167.002952 3309.4668,167.085354 L3309.56595,167.174635 L3311.825,169.459 L3311.88827,169.286843 C3312.09408,168.655395 3312.09462,167.91219 3311.86621,167.159025 L3311.79079,166.932879 C3311.66156,166.577746 3311.71814,166.181536 3311.94162,165.876776 L3313.81491,163.322181 C3314.07458,162.968067 3314.51568,162.796161 3314.94649,162.881177 C3315.10256,162.911976 3315.25159,162.919991 3315.39047,162.907236 L3315.447,162.899 L3313.161,160.586 Z" id="not-pin"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-pin" width="10px" height="12.5000085px" viewBox="0 0 10 12.5000085" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -192.999991)" fill-rule="nonzero">
+                <path d="M3310.53769,201.710098 L3314.46887,201.729442 C3314.61785,201.730414 3314.75978,201.682381 3314.86031,201.596974 C3314.96083,201.511567 3315.01078,201.396574 3314.99805,201.279844 C3314.85901,199.956365 3313.86998,198.765523 3312.3918,198.119848 L3311.92075,195.239455 C3312.61157,194.805093 3313.00942,194.144925 3313.00183,193.445567 C3312.99997,193.21378 3312.75936,193.024736 3312.46434,193.023279 L3307.63649,193 C3307.49473,192.99929 3307.35911,193.042863 3307.25948,193.121137 C3307.15985,193.19941 3307.10439,193.305965 3307.10531,193.417344 C3307.10822,194.116753 3307.51649,194.780941 3308.21448,195.221789 L3307.80344,197.99444 C3306.21358,198.591687 3305.12619,199.836238 3305.00133,201.231659 C3304.99083,201.348217 3305.04275,201.463531 3305.14459,201.549815 C3305.24643,201.636099 3305.38895,201.68553 3305.53782,201.686196 L3309.469,201.704749 L3309.49534,205.078285 C3309.4965,205.194049 3309.55726,205.299216 3309.65432,205.375471 C3309.8081,205.496076 3310.03803,205.532979 3310.23703,205.468991 C3310.43603,205.405003 3310.56496,205.252708 3310.56377,205.083039 L3310.53769,201.710098 Z" id="pin"></path>
+            </g>
+        </g>
+        </svg>
+        </div><div class="prompt-item " data-index="3">
+        <span class="name">解释</span>
+        <svg data-index="3" class="prompt-edit default" width="10.9999832px" height="11.0000133px" viewBox="0 0 10.9999832 11.0000133" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3284.000000, -159.999987)" fill-rule="nonzero">
+                <path d="M3287.52957,169.125068 L3285.26263,169.561773 C3285.14458,169.584513 3285.03046,169.507255 3285.00772,169.389212 C3285.00223,169.360724 3285.00249,169.331426 3285.00849,169.30304 L3285.46306,167.151697 L3291.29053,161.588176 C3291.45877,161.427553 3291.72356,161.427568 3291.89179,161.588211 L3293.32829,162.959971 C3293.48044,163.105259 3293.50432,163.334397 3293.39667,163.505897 L3293.32823,163.589698 L3287.52957,169.125068 Z M3294.86522,161.491761 L3293.42838,160.1204 C3293.26012,159.959808 3292.99534,159.959855 3292.82714,160.120506 L3292.43441,160.495595 C3292.28228,160.640896 3292.25842,160.870036 3292.36608,161.041527 L3292.43442,161.125215 L3293.87089,162.497192 C3294.03918,162.657925 3294.30412,162.657878 3294.47235,162.497085 L3294.86544,162.121381 C3295.01752,161.976025 3295.0413,161.746877 3294.93358,161.575425 L3294.86522,161.491761 Z M3284.47801,170.043984 L3292.5337,170.043984 C3292.79769,170.043984 3293.0117,170.257996 3293.0117,170.521992 C3293.0117,170.785989 3292.79769,171 3292.5337,171 L3284.47801,171 C3284.21401,171 3284,170.785989 3284,170.521992 C3284,170.257996 3284.21401,170.043984 3284.47801,170.043984 Z" id="edit"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-no-pin" width="12px" height="12px" viewBox="0 0 12 12" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -159.000000)" fill-rule="nonzero">
+                <path d="M3312.99788,159.001906 C3313.12975,159.013538 3313.26089,159.077807 3313.36243,159.180555 L3316.82116,162.678989 C3317.03249,162.892799 3317.06055,163.211641 3316.88384,163.39122 C3316.35212,163.93449 3315.55853,164.155333 3314.72741,163.991321 L3312.85413,166.545917 C3313.42262,168.108094 3313.22013,169.736866 3312.30366,170.854845 C3312.22316,170.953785 3312.09886,171.006206 3311.96087,170.999413 C3311.82288,170.99262 3311.68377,170.927233 3311.57724,170.819085 L3308.76119,167.9701 L3306.18913,170.58267 C3306.05966,170.714001 3305.84984,170.738165 3305.65738,170.643907 C3305.46493,170.549648 3305.32769,170.355502 3305.3096,170.151897 C3305.29828,170.023286 3305.3353,169.898606 3305.42339,169.808752 L3307.99572,167.19554 L3305.17906,164.347169 C3305.07237,164.239335 3305.0077,164.098574 3305.00064,163.958803 C3304.99358,163.819031 3305.04477,163.692923 3305.14187,163.610865 C3306.30363,162.62781 3308.04265,162.45469 3309.6463,163.141592 L3312.07204,161.305781 C3311.90803,160.463572 3312.12421,159.658481 3312.65934,159.118539 C3312.74423,159.03223 3312.86602,158.990273 3312.99788,159.001906 Z M3313.161,160.586 L3313.15516,160.627167 C3313.14268,160.771848 3313.15111,160.927146 3313.18273,161.08949 C3313.26529,161.513445 3313.0993,161.947421 3312.75489,162.20807 L3310.32915,164.04388 C3310.00507,164.289144 3309.57436,164.341767 3309.20076,164.181743 C3308.25841,163.778101 3307.28729,163.760232 3306.51815,164.082438 L3308.80031,166.399902 C3308.92467,166.525655 3309.01355,166.673288 3309.06697,166.830322 L3309.082,166.886 L3309.13,166.900055 C3309.24964,166.941188 3309.36376,167.002952 3309.4668,167.085354 L3309.56595,167.174635 L3311.825,169.459 L3311.88827,169.286843 C3312.09408,168.655395 3312.09462,167.91219 3311.86621,167.159025 L3311.79079,166.932879 C3311.66156,166.577746 3311.71814,166.181536 3311.94162,165.876776 L3313.81491,163.322181 C3314.07458,162.968067 3314.51568,162.796161 3314.94649,162.881177 C3315.10256,162.911976 3315.25159,162.919991 3315.39047,162.907236 L3315.447,162.899 L3313.161,160.586 Z" id="not-pin"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-pin" width="10px" height="12.5000085px" viewBox="0 0 10 12.5000085" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -192.999991)" fill-rule="nonzero">
+                <path d="M3310.53769,201.710098 L3314.46887,201.729442 C3314.61785,201.730414 3314.75978,201.682381 3314.86031,201.596974 C3314.96083,201.511567 3315.01078,201.396574 3314.99805,201.279844 C3314.85901,199.956365 3313.86998,198.765523 3312.3918,198.119848 L3311.92075,195.239455 C3312.61157,194.805093 3313.00942,194.144925 3313.00183,193.445567 C3312.99997,193.21378 3312.75936,193.024736 3312.46434,193.023279 L3307.63649,193 C3307.49473,192.99929 3307.35911,193.042863 3307.25948,193.121137 C3307.15985,193.19941 3307.10439,193.305965 3307.10531,193.417344 C3307.10822,194.116753 3307.51649,194.780941 3308.21448,195.221789 L3307.80344,197.99444 C3306.21358,198.591687 3305.12619,199.836238 3305.00133,201.231659 C3304.99083,201.348217 3305.04275,201.463531 3305.14459,201.549815 C3305.24643,201.636099 3305.38895,201.68553 3305.53782,201.686196 L3309.469,201.704749 L3309.49534,205.078285 C3309.4965,205.194049 3309.55726,205.299216 3309.65432,205.375471 C3309.8081,205.496076 3310.03803,205.532979 3310.23703,205.468991 C3310.43603,205.405003 3310.56496,205.252708 3310.56377,205.083039 L3310.53769,201.710098 Z" id="pin"></path>
+            </g>
+        </g>
+        </svg>
+        </div><div class="prompt-item " data-index="4">
+        <span class="name">主题创作</span>
+        <svg data-index="4" class="prompt-edit default" width="10.9999832px" height="11.0000133px" viewBox="0 0 10.9999832 11.0000133" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3284.000000, -159.999987)" fill-rule="nonzero">
+                <path d="M3287.52957,169.125068 L3285.26263,169.561773 C3285.14458,169.584513 3285.03046,169.507255 3285.00772,169.389212 C3285.00223,169.360724 3285.00249,169.331426 3285.00849,169.30304 L3285.46306,167.151697 L3291.29053,161.588176 C3291.45877,161.427553 3291.72356,161.427568 3291.89179,161.588211 L3293.32829,162.959971 C3293.48044,163.105259 3293.50432,163.334397 3293.39667,163.505897 L3293.32823,163.589698 L3287.52957,169.125068 Z M3294.86522,161.491761 L3293.42838,160.1204 C3293.26012,159.959808 3292.99534,159.959855 3292.82714,160.120506 L3292.43441,160.495595 C3292.28228,160.640896 3292.25842,160.870036 3292.36608,161.041527 L3292.43442,161.125215 L3293.87089,162.497192 C3294.03918,162.657925 3294.30412,162.657878 3294.47235,162.497085 L3294.86544,162.121381 C3295.01752,161.976025 3295.0413,161.746877 3294.93358,161.575425 L3294.86522,161.491761 Z M3284.47801,170.043984 L3292.5337,170.043984 C3292.79769,170.043984 3293.0117,170.257996 3293.0117,170.521992 C3293.0117,170.785989 3292.79769,171 3292.5337,171 L3284.47801,171 C3284.21401,171 3284,170.785989 3284,170.521992 C3284,170.257996 3284.21401,170.043984 3284.47801,170.043984 Z" id="edit"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-no-pin" width="12px" height="12px" viewBox="0 0 12 12" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -159.000000)" fill-rule="nonzero">
+                <path d="M3312.99788,159.001906 C3313.12975,159.013538 3313.26089,159.077807 3313.36243,159.180555 L3316.82116,162.678989 C3317.03249,162.892799 3317.06055,163.211641 3316.88384,163.39122 C3316.35212,163.93449 3315.55853,164.155333 3314.72741,163.991321 L3312.85413,166.545917 C3313.42262,168.108094 3313.22013,169.736866 3312.30366,170.854845 C3312.22316,170.953785 3312.09886,171.006206 3311.96087,170.999413 C3311.82288,170.99262 3311.68377,170.927233 3311.57724,170.819085 L3308.76119,167.9701 L3306.18913,170.58267 C3306.05966,170.714001 3305.84984,170.738165 3305.65738,170.643907 C3305.46493,170.549648 3305.32769,170.355502 3305.3096,170.151897 C3305.29828,170.023286 3305.3353,169.898606 3305.42339,169.808752 L3307.99572,167.19554 L3305.17906,164.347169 C3305.07237,164.239335 3305.0077,164.098574 3305.00064,163.958803 C3304.99358,163.819031 3305.04477,163.692923 3305.14187,163.610865 C3306.30363,162.62781 3308.04265,162.45469 3309.6463,163.141592 L3312.07204,161.305781 C3311.90803,160.463572 3312.12421,159.658481 3312.65934,159.118539 C3312.74423,159.03223 3312.86602,158.990273 3312.99788,159.001906 Z M3313.161,160.586 L3313.15516,160.627167 C3313.14268,160.771848 3313.15111,160.927146 3313.18273,161.08949 C3313.26529,161.513445 3313.0993,161.947421 3312.75489,162.20807 L3310.32915,164.04388 C3310.00507,164.289144 3309.57436,164.341767 3309.20076,164.181743 C3308.25841,163.778101 3307.28729,163.760232 3306.51815,164.082438 L3308.80031,166.399902 C3308.92467,166.525655 3309.01355,166.673288 3309.06697,166.830322 L3309.082,166.886 L3309.13,166.900055 C3309.24964,166.941188 3309.36376,167.002952 3309.4668,167.085354 L3309.56595,167.174635 L3311.825,169.459 L3311.88827,169.286843 C3312.09408,168.655395 3312.09462,167.91219 3311.86621,167.159025 L3311.79079,166.932879 C3311.66156,166.577746 3311.71814,166.181536 3311.94162,165.876776 L3313.81491,163.322181 C3314.07458,162.968067 3314.51568,162.796161 3314.94649,162.881177 C3315.10256,162.911976 3315.25159,162.919991 3315.39047,162.907236 L3315.447,162.899 L3313.161,160.586 Z" id="not-pin"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-pin" width="10px" height="12.5000085px" viewBox="0 0 10 12.5000085" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -192.999991)" fill-rule="nonzero">
+                <path d="M3310.53769,201.710098 L3314.46887,201.729442 C3314.61785,201.730414 3314.75978,201.682381 3314.86031,201.596974 C3314.96083,201.511567 3315.01078,201.396574 3314.99805,201.279844 C3314.85901,199.956365 3313.86998,198.765523 3312.3918,198.119848 L3311.92075,195.239455 C3312.61157,194.805093 3313.00942,194.144925 3313.00183,193.445567 C3312.99997,193.21378 3312.75936,193.024736 3312.46434,193.023279 L3307.63649,193 C3307.49473,192.99929 3307.35911,193.042863 3307.25948,193.121137 C3307.15985,193.19941 3307.10439,193.305965 3307.10531,193.417344 C3307.10822,194.116753 3307.51649,194.780941 3308.21448,195.221789 L3307.80344,197.99444 C3306.21358,198.591687 3305.12619,199.836238 3305.00133,201.231659 C3304.99083,201.348217 3305.04275,201.463531 3305.14459,201.549815 C3305.24643,201.636099 3305.38895,201.68553 3305.53782,201.686196 L3309.469,201.704749 L3309.49534,205.078285 C3309.4965,205.194049 3309.55726,205.299216 3309.65432,205.375471 C3309.8081,205.496076 3310.03803,205.532979 3310.23703,205.468991 C3310.43603,205.405003 3310.56496,205.252708 3310.56377,205.083039 L3310.53769,201.710098 Z" id="pin"></path>
+            </g>
+        </g>
+        </svg>
+        </div><div class="prompt-item " data-index="5">
+        <span class="name">写作优化</span>
+        <svg data-index="5" class="prompt-edit default" width="10.9999832px" height="11.0000133px" viewBox="0 0 10.9999832 11.0000133" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3284.000000, -159.999987)" fill-rule="nonzero">
+                <path d="M3287.52957,169.125068 L3285.26263,169.561773 C3285.14458,169.584513 3285.03046,169.507255 3285.00772,169.389212 C3285.00223,169.360724 3285.00249,169.331426 3285.00849,169.30304 L3285.46306,167.151697 L3291.29053,161.588176 C3291.45877,161.427553 3291.72356,161.427568 3291.89179,161.588211 L3293.32829,162.959971 C3293.48044,163.105259 3293.50432,163.334397 3293.39667,163.505897 L3293.32823,163.589698 L3287.52957,169.125068 Z M3294.86522,161.491761 L3293.42838,160.1204 C3293.26012,159.959808 3292.99534,159.959855 3292.82714,160.120506 L3292.43441,160.495595 C3292.28228,160.640896 3292.25842,160.870036 3292.36608,161.041527 L3292.43442,161.125215 L3293.87089,162.497192 C3294.03918,162.657925 3294.30412,162.657878 3294.47235,162.497085 L3294.86544,162.121381 C3295.01752,161.976025 3295.0413,161.746877 3294.93358,161.575425 L3294.86522,161.491761 Z M3284.47801,170.043984 L3292.5337,170.043984 C3292.79769,170.043984 3293.0117,170.257996 3293.0117,170.521992 C3293.0117,170.785989 3292.79769,171 3292.5337,171 L3284.47801,171 C3284.21401,171 3284,170.785989 3284,170.521992 C3284,170.257996 3284.21401,170.043984 3284.47801,170.043984 Z" id="edit"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-no-pin" width="12px" height="12px" viewBox="0 0 12 12" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -159.000000)" fill-rule="nonzero">
+                <path d="M3312.99788,159.001906 C3313.12975,159.013538 3313.26089,159.077807 3313.36243,159.180555 L3316.82116,162.678989 C3317.03249,162.892799 3317.06055,163.211641 3316.88384,163.39122 C3316.35212,163.93449 3315.55853,164.155333 3314.72741,163.991321 L3312.85413,166.545917 C3313.42262,168.108094 3313.22013,169.736866 3312.30366,170.854845 C3312.22316,170.953785 3312.09886,171.006206 3311.96087,170.999413 C3311.82288,170.99262 3311.68377,170.927233 3311.57724,170.819085 L3308.76119,167.9701 L3306.18913,170.58267 C3306.05966,170.714001 3305.84984,170.738165 3305.65738,170.643907 C3305.46493,170.549648 3305.32769,170.355502 3305.3096,170.151897 C3305.29828,170.023286 3305.3353,169.898606 3305.42339,169.808752 L3307.99572,167.19554 L3305.17906,164.347169 C3305.07237,164.239335 3305.0077,164.098574 3305.00064,163.958803 C3304.99358,163.819031 3305.04477,163.692923 3305.14187,163.610865 C3306.30363,162.62781 3308.04265,162.45469 3309.6463,163.141592 L3312.07204,161.305781 C3311.90803,160.463572 3312.12421,159.658481 3312.65934,159.118539 C3312.74423,159.03223 3312.86602,158.990273 3312.99788,159.001906 Z M3313.161,160.586 L3313.15516,160.627167 C3313.14268,160.771848 3313.15111,160.927146 3313.18273,161.08949 C3313.26529,161.513445 3313.0993,161.947421 3312.75489,162.20807 L3310.32915,164.04388 C3310.00507,164.289144 3309.57436,164.341767 3309.20076,164.181743 C3308.25841,163.778101 3307.28729,163.760232 3306.51815,164.082438 L3308.80031,166.399902 C3308.92467,166.525655 3309.01355,166.673288 3309.06697,166.830322 L3309.082,166.886 L3309.13,166.900055 C3309.24964,166.941188 3309.36376,167.002952 3309.4668,167.085354 L3309.56595,167.174635 L3311.825,169.459 L3311.88827,169.286843 C3312.09408,168.655395 3312.09462,167.91219 3311.86621,167.159025 L3311.79079,166.932879 C3311.66156,166.577746 3311.71814,166.181536 3311.94162,165.876776 L3313.81491,163.322181 C3314.07458,162.968067 3314.51568,162.796161 3314.94649,162.881177 C3315.10256,162.911976 3315.25159,162.919991 3315.39047,162.907236 L3315.447,162.899 L3313.161,160.586 Z" id="not-pin"></path>
+            </g>
+        </g>
+        </svg>
+        <svg class="prompt-pin" width="10px" height="12.5000085px" viewBox="0 0 10 12.5000085" version="1.1">
+        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+            <g transform="translate(-3305.000000, -192.999991)" fill-rule="nonzero">
+                <path d="M3310.53769,201.710098 L3314.46887,201.729442 C3314.61785,201.730414 3314.75978,201.682381 3314.86031,201.596974 C3314.96083,201.511567 3315.01078,201.396574 3314.99805,201.279844 C3314.85901,199.956365 3313.86998,198.765523 3312.3918,198.119848 L3311.92075,195.239455 C3312.61157,194.805093 3313.00942,194.144925 3313.00183,193.445567 C3312.99997,193.21378 3312.75936,193.024736 3312.46434,193.023279 L3307.63649,193 C3307.49473,192.99929 3307.35911,193.042863 3307.25948,193.121137 C3307.15985,193.19941 3307.10439,193.305965 3307.10531,193.417344 C3307.10822,194.116753 3307.51649,194.780941 3308.21448,195.221789 L3307.80344,197.99444 C3306.21358,198.591687 3305.12619,199.836238 3305.00133,201.231659 C3304.99083,201.348217 3305.04275,201.463531 3305.14459,201.549815 C3305.24643,201.636099 3305.38895,201.68553 3305.53782,201.686196 L3309.469,201.704749 L3309.49534,205.078285 C3309.4965,205.194049 3309.55726,205.299216 3309.65432,205.375471 C3309.8081,205.496076 3310.03803,205.532979 3310.23703,205.468991 C3310.43603,205.405003 3310.56496,205.252708 3310.56377,205.083039 L3310.53769,201.710098 Z" id="pin"></path>
+            </g>
+        </g>
+        </svg>
+        </div>
+                </div>
+                <div class="prompt-bottom" id="close-prompt">
+                    关闭UOS AI浮窗
+                </div>
+            </div>
+            </div><iframe id="google_esf" name="google_esf" src="./mb_files/zrt_lookup_fy2021.html" style="display: none;"></iframe></body></html>
