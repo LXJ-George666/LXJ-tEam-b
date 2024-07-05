@@ -52,13 +52,13 @@
     <div class="panel-heading">Morse Code Converter</div>
     <div class="panel-body text-center">
         <div class="form-group">
-            <textarea class="form-control" rows="3" id="input" placeholder="在这里贴入要转换的内容">LXJ tEam is good!</textarea>
+            <textarea class="form-control" rows="3" id="input" placeholder="Paste in what you want to convert here.">LXJ tEam is good!</textarea>
         </div>
-        <h3>自定义<h3>
+        <h3>Customizable<h3>
         <div class="form-group row">
             <div class="col-xs-4">
             <div class="input-group">
-                <span class="input-group-addon">分隔</span>
+                <span class="input-group-addon">Division</span>
                 <input type="text" class="form-control" id="space" value="/">
             </div>
             </div>
@@ -81,27 +81,27 @@
         <div class="form-group">
             <button class="btn btn-success" id="encode">
                 <span class="glyphicon glyphicon-sort-by-order-alt" aria-hidden="true"></span> 
-                编码
+                Demerger
             </button>
             
             <button class="btn btn-info" id="decode">
                 <span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span> 
-                解码
+                Decoder
             </button>
             
             <button class="btn btn-info" id="copy" data-clipboard-target="pinyin">
                 <span class="glyphicon glyphicon-copy" aria-hidden="true"></span> 
-                复制
+                Copy
             </button>
             
             <button class="btn btn-info" id="play" style="display: none">
                 <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span> 
-                播放
+                Play
             </button>
             
             <button class="btn btn-default" onclick="$(&#39;#input&#39;).val(&#39;&#39;);$(&#39;#output&#39;).val(&#39;&#39;)">
                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 
-                清空
+                Empty
             </button>
         </div>
         
@@ -122,7 +122,7 @@ $("#encode").click(function(){
 
 // 解码
 $("#decode").click(function(){
-    $('#result').val(xmorse.decode($('#input').val(), getoption()) || '解码失败，请确认输入是否正确');
+    $('#result').val(xmorse.decode($('#input').val(), getoption()) || 'Decoding failed, please make sure the input is correct.');
     $('#play').hide();
 });
 
