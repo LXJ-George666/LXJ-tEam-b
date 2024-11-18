@@ -71,8 +71,8 @@
 <body>
   <div class="container">
     <h2>密码验证</h2>
-    <input type="password" id="passwordInput" placeholder="请输入密码">
-    <h6><u><a href="https://linux.do/t/topic/121681/">不知道密码？</a></u><h6>
+    <input id="passwordInput" placeholder="请输入密码">
+<!--    <h6><u><a href="https://linux.do/t/topic/121681/">不知道密码？</a></u><h6> -->
     <button onclick="checkPassword()">检验并进入</button>
     <p id="message"></p>
     <span class="close-button" onclick="closeMessage()">×</span>
@@ -80,7 +80,7 @@
 
 <script>
     function checkPassword() {
-      var correctPassword = "5958326474663";
+      var correctPassword = "cunchugui";
       var passwordInput = document.getElementById("passwordInput").value;
       var messageElement = document.getElementById("message");
   
